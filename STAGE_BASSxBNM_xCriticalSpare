@@ -75,6 +75,9 @@ if ( $status -eq 1 ){
   , db_id
   , dim_Vessel_key
   , mtrlstk_stock
+  , Vessel_ID
+  , Vessel_Name
+  , Linked_Component
   , DSS_CREATE_TIME
   , DSS_UPDATE_TIME
   )
@@ -89,6 +92,9 @@ if ( $status -eq 1 ){
        , stage_BASSxBNM_xCriticalSpare_10.db_id AS db_id
        , COALESCE(dim_Vessel.dim_Vessel_key, 0) AS dim_Vessel_key
        , stage_BASSxBNM_xCriticalSpare_10.mtrlstk_stock AS mtrlstk_stock
+       , stage_BASSxBNM_xCriticalSpare_10.Vessel_ID AS Vessel_ID
+       , stage_BASSxBNM_xCriticalSpare_10.Vessel_Name AS Vessel_Name
+       , stage_BASSxBNM_xCriticalSpare_10.Linked_Component AS Linked_Component
        , CAST(CURRENT_TIMESTAMP AS TIMESTAMP) AS DSS_CREATE_TIME
        , CAST(CURRENT_TIMESTAMP AS TIMESTAMP) AS DSS_UPDATE_TIME
   FROM [TABLEOWNER].[stage_BASSxBNM_xCriticalSpare_10] stage_BASSxBNM_xCriticalSpare_10
